@@ -8,12 +8,9 @@ import tn.esprim.gestionfoyer.repositories.ChambreRepository;
 
 import java.util.List;
 
-import static org.antlr.v4.runtime.tree.xpath.XPath.findAll;
-
 @Service
 @AllArgsConstructor
-public class ChambreServiceImpl implements IChambreService {
-
+public class ChambreServiceImpl implements IChambreService{
     @Autowired
     private ChambreRepository chambreRepository;
 
@@ -21,6 +18,7 @@ public class ChambreServiceImpl implements IChambreService {
     public List<Chambre> retrieveAllChambres() {
         return chambreRepository.findAll();
     }
+
 
     @Override
     public Chambre retrieveChambre(Long chambreId) {
@@ -35,7 +33,6 @@ public class ChambreServiceImpl implements IChambreService {
     @Override
     public void removeChambre(Long chambreId) {
         chambreRepository.deleteById(chambreId);
-
     }
 
     @Override
